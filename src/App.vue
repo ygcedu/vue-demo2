@@ -1,18 +1,13 @@
 <template>
   <div id="app">
-    你想要：{{x}}
-    <label>
-      <input name="want" type="radio" v-model="x" :value="1"/>
-      <span>抽烟</span>
-    </label>
-    <label>
-      <input name="want" type="radio" v-model="x" :value="2"/>
-      <span>喝酒</span>
-    </label>
-    <label>
-      <input name="want" type="radio" v-model="x" :value="3"/>
-      <span>烫头</span>
-    </label>
+    你想要：{{ x }}
+    <hr/>
+    <select v-model="x">
+      <option value=""> -</option>
+      <option :value="1">抽烟</option>
+      <option :value="2">喝酒</option>
+      <option :value="3">烫头</option>
+    </select>
   </div>
 </template>
 
