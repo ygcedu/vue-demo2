@@ -5,7 +5,7 @@
     <form @submit.prevent="onSubmit">
       <label>
         <span>用户名</span>
-        <input type="text" :value="user.username" @input="user.username = $event.target.value"/>
+        <MyInput v-model="user.username"/>
       </label>
       <label>
         <span>密码</span>
@@ -17,6 +17,7 @@
 </template>
 
 <script>
+import MyInput from "@/MyInput";
 export default {
   name: 'App',
   data() {
@@ -33,6 +34,6 @@ export default {
       console.log(this.user);
     }
   },
-  components: {}
+  components: {MyInput}
 }
 </script>
