@@ -5,7 +5,7 @@
     <form @submit.prevent="onSubmit">
       <label>
         <span>用户名</span>
-        <input type="text" v-model.trim="user.username"/>
+        <input type="text" :value="user.username" @input="user.username = $event.target.value"/>
       </label>
       <label>
         <span>密码</span>
