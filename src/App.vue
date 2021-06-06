@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    爱好：{{x}}
+    你想要：{{x}}
     <label>
-      <input type="checkbox" v-model="x" :value="1"/>
+      <input name="want" type="radio" v-model="x" :value="1"/>
       <span>抽烟</span>
     </label>
     <label>
-      <input type="checkbox" v-model="x" :value="2"/>
+      <input name="want" type="radio" v-model="x" :value="2"/>
       <span>喝酒</span>
     </label>
     <label>
-      <input type="checkbox" v-model="x" :value="3"/>
+      <input name="want" type="radio" v-model="x" :value="3"/>
       <span>烫头</span>
     </label>
   </div>
@@ -21,7 +21,7 @@ export default {
   name: 'App',
   data() {
     return {
-      x: []
+      x: ''
     }
   },
   components: {}
