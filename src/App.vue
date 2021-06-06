@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    登录
+    {{user}}
+    <hr/>登录
     <form @submit.prevent="onSubmit">
-      <span>用户名</span>
       <label>
-        <input type="text" v-model="user.username"/>
+        <span>用户名</span>
+        <input type="text" v-model.lazy="user.username"/>
       </label>
-      <span>密码</span>
       <label>
+        <span>密码</span>
         <input type="password" v-model="user.password"/>
       </label>
-      <button>登录</button>
+      <button type="submit">登录</button>
     </form>
   </div>
 </template>
