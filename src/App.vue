@@ -1,13 +1,17 @@
 <template>
   <div id="app">
-    你想要：{{ x }}
-    <hr/>
-    <select multiple v-model="x">
-      <option value=""> -</option>
-      <option v-for="item in array" :value="item.value" :key="item.value">
-        {{item.text}}
-      </option>
-    </select>
+    登录
+    <form @submit.prevent="onSubmit">
+      <span>用户名</span>
+      <label>
+        <input type="text" v-model="user.username"/>
+      </label>
+      <span>密码</span>
+      <label>
+        <input type="password" v-model="user.password"/>
+      </label>
+      <button>登录</button>
+    </form>
   </div>
 </template>
 
@@ -17,11 +21,15 @@ export default {
   data() {
     return {
       x: [],
-      array: [
-        {text: '抽烟', value: 1},
-        {text: '喝酒', value: 2},
-        {text: '烫头', value: 3}
-      ]
+      user: {
+        username: '',
+        password: ''
+      }
+    }
+  },
+  methods: {
+    onSubmit() {
+      console.log(this.user);
     }
   },
   components: {}
