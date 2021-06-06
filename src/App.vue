@@ -2,11 +2,11 @@
   <div id="app">
     你想要：{{ x }}
     <hr/>
-    <select v-model="x">
+    <select multiple v-model="x">
       <option value=""> -</option>
-      <option :value="1">抽烟</option>
-      <option :value="2">喝酒</option>
-      <option :value="3">烫头</option>
+      <option v-for="item in array" :value="item.value" :key="item.value">
+        {{item.text}}
+      </option>
     </select>
   </div>
 </template>
@@ -16,7 +16,12 @@ export default {
   name: 'App',
   data() {
     return {
-      x: ''
+      x: [],
+      array: [
+        {text: '抽烟', value: 1},
+        {text: '喝酒', value: 2},
+        {text: '烫头', value: 3}
+      ]
     }
   },
   components: {}
