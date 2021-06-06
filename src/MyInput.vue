@@ -1,7 +1,6 @@
 <template>
   <div class="red wrapper">
-    <input :value="_value" @input="_value= $event.target.value"/>
-    <input v-model="_value"/>
+    <input :value="value" @input="$emit('input', $event.target.value)"/>
   </div>
 </template>
 
@@ -12,21 +11,6 @@ export default {
     value: {
       type: String
     }
-  },
-  computed: {
-    _value: {
-      get() {
-        return this.value
-      },
-      set(newValue) {
-        this.$emit('input', newValue);
-      }
-    }
-  },
-  methods: {
-    // onInput(e) {
-    //
-    // }
   }
 };
 </script>
