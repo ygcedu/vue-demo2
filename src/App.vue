@@ -1,10 +1,9 @@
 <template>
   <div id="app">
-    <textarea v-model="message" placeholder="editme"/>
-    <p>Message is: {{ message }}</p>
-    <p>
-      <button @click="message = 'frank'">set message to frank</button>
-    </p>
+    <label>
+      <input type="checkbox" v-model="x"/>
+      <span>x:{{ x }}</span>
+    </label>
   </div>
 </template>
 
@@ -13,7 +12,7 @@ export default {
   name: 'App',
   data() {
     return {
-      message: 'hi'
+      x: true
     }
   },
   components: {}
