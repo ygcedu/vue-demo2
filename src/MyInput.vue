@@ -1,6 +1,7 @@
 <template>
   <div class="red wrapper">
-    <input :value="value" @input="onInput"/>
+    <input :value="_value" @input="_value= $event.target.value"/>
+    <input v-model="_value"/>
   </div>
 </template>
 
@@ -12,11 +13,20 @@ export default {
       type: String
     }
   },
-  methods: {
-    onInput(e) {
-      const value = e.target.value;
-      this.$emit('input', value);
+  computed: {
+    _value: {
+      get() {
+        return this.value
+      },
+      set(newValue) {
+        this.$emit('input', newValue);
+      }
     }
+  },
+  methods: {
+    // onInput(e) {
+    //
+    // }
   }
 };
 </script>
